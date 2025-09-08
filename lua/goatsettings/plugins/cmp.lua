@@ -25,6 +25,11 @@ return {
                     { name = "buffer" },
                     { name = "path" },
                 }),
+		view = {
+
+		   entries = {max_item_count = 5}
+		
+		}
             })
         end,
     },
