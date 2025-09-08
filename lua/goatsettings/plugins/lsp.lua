@@ -1,5 +1,4 @@
 return {
-    -- Mason: gestor de LSP, DAP y linters
     {
         "williamboman/mason.nvim",
         config = function()
@@ -7,18 +6,16 @@ return {
         end,
     },
 
-    -- Integración Mason + LSPConfig
     {
         "williamboman/mason-lspconfig.nvim",
         dependencies = { "mason.nvim", "neovim/nvim-lspconfig" },
         config = function()
             require("mason-lspconfig").setup {
-                ensure_installed = { "lua_ls", "pyright", "ts_ls" },
+                ensure_installed = { "lua_ls", "pyright", "ts_ls","clangd" },
             }
         end,
     },
 
-    -- Configuración de LSP
     {
         "neovim/nvim-lspconfig",
         config = function()
@@ -34,10 +31,7 @@ return {
                 },
             }
 
-            -- Ejemplo: Python
             lspconfig.pyright.setup {}
-            
-            -- Ejemplo: TypeScript / JS
             lspconfig.ts_ls.setup {}
         end,
     },
