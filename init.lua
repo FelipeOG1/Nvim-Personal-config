@@ -5,4 +5,7 @@ vim.opt.number = true       -- número absoluto
 vim.opt.relativenumber =true
 vim.opt.clipboard = "unnamedplus"
 vim.o.shell = "powershell.exe -NoLogo -NoProfile"
+vim.opt.pumheight = 5
+
+
 

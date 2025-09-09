@@ -1,6 +1,6 @@
--- Función para abrir/alternar terminal
+vim.g.mapleader = " "
+vim.keymap.set('n', '<leader>a', ':bprevious<CR>', { noremap = true, silent = true })
 local function toggle_terminal()
-    -- Buscar buffers de terminal existentes
     for _, buf in ipairs(vim.api.nvim_list_bufs()) do
         if vim.api.nvim_buf_is_valid(buf) and vim.api.nvim_buf_get_option(buf, "buftype") == "terminal" then
             -- Cambiar a ese buffer
@@ -23,8 +23,6 @@ vim.keymap.set("t", "<leader>b", function()
     vim.cmd("stopinsert")
     vim.cmd("b#")
 end, { noremap = true, silent = true })
-
-
 vim.g.mapleader = " "
 vim.keymap.set("n","<leader>pv",vim.cmd.Ex)
 -- Salir del modo terminal y volver a modo normal con <Esc>
@@ -36,7 +34,6 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<leader>h', vim.lsp.buf.hover, { desc = "Hover info" })
 
 -- Go to definition
-vim.keymap.set('n', '<leader>d', vim.lsp.buf.definition, { desc = "Go to definition" })
 
 -- Go to type definition
 vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, { desc = "Go to type definition" })
